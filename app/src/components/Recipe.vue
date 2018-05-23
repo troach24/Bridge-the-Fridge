@@ -1,18 +1,22 @@
 <template>
   <ul>
-    <li :key="recipe" v-for="recipe in recipes">
+    <li
+    :key="recipe.id"
+    v-for="recipe in recipes">
       <header>{{recipe.recipeName}}</header>
       <div>
         <img :src="recipe.imageUrlsBySize[90]">
       </div>
-      </li>
+    </li>
   </ul>
+
   <!-- Based on search results, fetch images by ID then
    displays that larger image dynamically to each component -->
 
-   <!-- List what you don't have on each component -->
-
    <!-- do a MODAL on click (bootstrap) -->
+
+   <!-- List what you don't have on each component ? -->
+
 </template>
 
 <script>
@@ -21,6 +25,8 @@ export default {
   data: () => ({
     recipe: '',
   }),
+  methods: {
+  },
 };
 </script>
 
