@@ -1,8 +1,13 @@
 <template>
   <main>
-    <SearchBar :ingredients="ingredients" :queryString="queryString" :getParams="getParams" :getData="getData" />
-    <Recipes :recipes="recipes.matches" />
+    <SearchBar
+    :ingredients="ingredients"
+    :queryString="queryString"
+    :getParams="getParams" 
+    :getData="getData" />
+    <Recipes :recipes="recipes.matches"/>
   </main>
+  <!-- just generate recipe ideas for now based on fridge ingredients -->
 </template>
 
 <script>
@@ -22,6 +27,7 @@ export default {
     ingredients: Array,
   }),
   mounted() {
+    // Not being used, yet.
     const result = JSON.parse(JSON.stringify(ingredients));
     this.ingredients = result.map(item => item.description);
   },
@@ -29,6 +35,7 @@ export default {
     getParams(str) {
       this.queryString = str;
     },
+    // HIDE the f'ing api key from the network dev tools...
     getData() {
       fetch(API.API_URL + this.queryString)
         .then(res => res.json())
@@ -44,4 +51,5 @@ export default {
   main {
     margin-top: 50px;
   }
+
 </style>

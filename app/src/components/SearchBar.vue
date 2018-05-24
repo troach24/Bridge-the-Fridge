@@ -5,12 +5,12 @@
       <div>
         <!-- @change="displayMatches" move down one line to activate autocomplete -->
         <input
-        v-model="searchParams"
-        type="text"
-        class="form-control"
-        placeholder="What's in your fridge?"
-        aria-label="What's in your fridge?"
-        aria-describedby="basic-addon2">
+          v-model="searchParams"
+          type="text"
+          class="form-control"
+          placeholder="What's in your fridge?"
+          aria-label="What's in your fridge?"
+          aria-describedby="basic-addon2">
         <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
       </div>
     </form>
@@ -23,6 +23,7 @@
 <script>
 
 export default {
+
   data: () => ({
     searchParams: '',
     paramData: '',

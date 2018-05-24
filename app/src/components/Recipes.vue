@@ -1,8 +1,14 @@
 <template>
   <section>
-    <!-- Add a filter to exclude ingredients after results
+    <!-- Stretch - add a filter to exclude ingredients after results
     are displayed -->
-    <Recipe  :recipes="recipes"/>
+    <ul id="recipes">
+      <Recipe 
+      :recipes="recipes"
+      v-for="recipe in recipes"
+      :key="recipe.id"
+      :recipe="recipe" />
+    </ul>
   </section>
 </template>
 
@@ -24,6 +30,14 @@ export default {
 section {
   margin: 5px;
   padding-bottom: 20px;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  margin-top: 50px;
 }
 
 </style>

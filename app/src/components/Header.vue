@@ -8,7 +8,7 @@
 header {
   display: flex;
   padding-top: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: .7px solid black;
 }
 
 header img {
