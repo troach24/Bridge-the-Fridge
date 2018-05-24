@@ -1,9 +1,10 @@
 <template>
+    <div>
+    <!-- <ul id="recipes"> -->
     <li
     :recipe="recipe"
     class="li-component">
-      <b-card
-      :ref="recipe.id">
+      <b-card>
         <b-card-body>
           <div class="card-title">
             <img :src="recipe.imageUrlsBySize[90]" alt="Recipe Thumbnail">
@@ -11,31 +12,24 @@
           </div>
           <p class="card-text">
             <img src="https://www.glutafin.co.uk/img/icons/time-icon.png" alt="Cook Time Icon">
-            &nbspCook time: {{recipe.totalTimeInSeconds / 60}}  Minutes
+            &nbsp Cook time: {{recipe.totalTimeInSeconds / 60}}  Minutes
           </p>
-          <!-- <b-btn v-b-modal="'myModal'">See More</b-btn> -->
-          <!-- v-b-modal.myModal -->
-
-          <!-- <b-btn v-b-modal.modal-center>Launch centered modal</b-btn>
-
-          <b-modal id="modal-center" centered title="Bootstrap-Vue">
-            <p class="my-4">Vertically centered modal!</p>
-          </b-modal> -->
-          
           <b-btn
+          :ref="recipe.id"
           v-b-modal.modal-center
-          @click="show=true, ev()"
+          @click="show=true, getRecipe(recipeId)"
           variant="primary">
             See More
           </b-btn>
-          <b-modal id="modal-center" v-model="show"
-          :title="recipe.recipeName">
-            Hello From My Modal!
-          </b-modal>
         </b-card-body>
       </b-card>
+      <b-modal id="modal-center1" v-model="show"
+      :title="selectedRecipe.name">
+        Hello From My Modal!
+      </b-modal>
     </li>
-
+    <!-- </ul> -->
+    </div>
   <!-- Based on search results, fetch images by ID then
    displays that larger image dynamically to each component -->
 
@@ -53,17 +47,25 @@ export default {
   data: () => ({
     totalCookTime: Number,
     show: false,
-    // name: String,
-    // st: "hellodjafdsojfnadsufadsiufasddkafndfansdfndsfdsafasddsf",
+    recipeId: String,
+    selectedRecipe: Object,
   }),
   methods: {
     cookTime: function() {
       return this.totalCookTime / 60;
     },
+    getRecipe(recipe) {
+      this.recipeId = this.recipe.id;
+      console.log(this.recipeId);
+      fetch(API.RECIPE_URL + this.recipeId + API.KEYS)
+        .then(res => res.json())
+        .then((selectedRecipe) => {
+          this.selectedRecipe = selectedRecipe;
+          console.log(selectedRecipe.name)
+        });
+    },
     ev() {
-      console.log(this.$refs)
-      console.log(API.RECIPE_URL);
-      
+      console.log(event.target)
     }
     // shortenString() {
     //   this.name.substr(0,20) + "..."
