@@ -18,5 +18,8 @@
   "homepage": "https://github.com/troach24/Bridge-the-Fridge#readme",
   "devDependencies": {
     "cypress": "^2.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
