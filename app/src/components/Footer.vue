@@ -5,14 +5,14 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 
 footer {
   position: fixed;
   bottom: 0;
-  padding: 5px;
-  width: 100%;
-  border-top: solid black .7px;
+  left: 0;
+  right: 0;
+  z-index: 1;
   background-color: white;
 }
 

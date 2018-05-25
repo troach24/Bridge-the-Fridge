@@ -3,11 +3,10 @@
     <SearchBar
     :ingredients="ingredients"
     :queryString="queryString"
-    :getParams="getParams" 
+    :getParams="getParams"
     :getData="getData" />
     <Recipes :recipes="recipes.matches"/>
   </main>
-  <!-- just generate recipe ideas for now based on fridge ingredients -->
 </template>
 
 <script>
@@ -49,7 +48,10 @@ export default {
 
 <style scoped>
   main {
+    position: relative;
+    z-index: 2;
     margin-top: 50px;
+    background-color: white;
   }
 
 </style>

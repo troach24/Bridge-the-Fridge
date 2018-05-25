@@ -3,7 +3,7 @@
     <!-- Stretch - add a filter to exclude ingredients after results
     are displayed -->
     <ul id="recipes">
-      <Recipe 
+      <Recipe
       :recipes="recipes"
       v-for="recipe in recipes"
       :key="recipe.id"

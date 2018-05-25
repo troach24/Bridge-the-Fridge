@@ -1,6 +1,5 @@
 <template>
-    <div>
-    <!-- <ul id="recipes"> -->
+  <div id="recipe-container">
     <li
     :recipe="recipe"
     class="li-component">
@@ -11,7 +10,8 @@
             <h4>{{recipe.recipeName}}</h4>
           </div>
           <p class="card-text">
-            <img src="https://www.glutafin.co.uk/img/icons/time-icon.png" alt="Cook Time Icon">
+            <img class="cook-time-icon" src="https://www.glutafin.co.uk/img/icons/time-icon.png" alt="Cook Time Icon">
+            <!-- need to fix time function + switch to hours if over 60 min -->
             &nbsp Cook time: {{recipe.totalTimeInSeconds / 60}}  Minutes
           </p>
           <b-btn
@@ -23,20 +23,23 @@
           </b-btn>
         </b-card-body>
       </b-card>
-      <b-modal id="modal-center1" v-model="show"
+      <b-modal size="lg" id="modal-center1" v-model="show"
       :title="selectedRecipe.name">
-        Hello From My Modal!
+        <body class="model-body">
+          <img :src="selectedRecipe.images && selectedRecipe.images[0].imageUrlsBySize[360]" alt="">
+          <ul>
+            <li
+            :key="ingredient"
+            :ingredient="selectedRecipe.ingredientLines"
+            v-for="ingredient in selectedRecipe.ingredientLines">
+            {{ingredient}}
+            </li>
+          </ul>
+        </body>
       </b-modal>
     </li>
-    <!-- </ul> -->
-    </div>
-  <!-- Based on search results, fetch images by ID then
-   displays that larger image dynamically to each component -->
-
-   <!-- do a MODAL on click (bootstrap) -->
-
+  </div>
    <!-- List what you don't have on each component ? -->
-
 </template>
 
 <script>
@@ -51,27 +54,19 @@ export default {
     selectedRecipe: Object,
   }),
   methods: {
-    cookTime: function() {
+    cookTime() {
       return this.totalCookTime / 60;
     },
-    getRecipe(recipe) {
+    getRecipe() {
       this.recipeId = this.recipe.id;
-      console.log(this.recipeId);
       fetch(API.RECIPE_URL + this.recipeId + API.KEYS)
         .then(res => res.json())
         .then((selectedRecipe) => {
           this.selectedRecipe = selectedRecipe;
-          console.log(selectedRecipe.name)
         });
     },
-    ev() {
-      console.log(event.target)
-    }
     // shortenString() {
     //   this.name.substr(0,20) + "..."
-    // },
-    // newStr() {
-    //   this.st.substr(0,7) + "..."
     // },
   },
 };
@@ -79,12 +74,8 @@ export default {
 
 <style scoped>
 
-ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  padding: 0;
-  margin-top: 50px;
+#recipe-container {
+  margin-bottom: 0;
 }
 
 .li-component {
@@ -111,6 +102,7 @@ ul {
 
 div .card-body {
   padding: 10px;
+  padding-top: 5px;
 }
 
 img {
@@ -127,28 +119,24 @@ div.cook-time p {
   margin: 0;
 }
 
-/* #ul-ingredients {
+modal-center1 {
   display: flex;
-  justify-content: flex-start;
-  flex-flow: row wrap;
-  padding: 0;
-  margin-top: 3vh;
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  list-style-type: disc;
-  break-inside: avoid-column;
-  -webkit-column-break-inside: avoid;
-  font-size: 0.8rem;
-} */
+  flex-direction: column;
+  justify-content: center;
+}
 
-/* .li-ingredient {
-  width: 45%;
-  line-height: 1.4;
-} */
+body.modal-body {
+  height: 700px;
+  width: 50%;
+}
 
-/* li.li-ingredient:first-child {
-  margin-right: 5%;
-} */
+.modal-body img {
+  width: 70%;
+  height: auto;
+}
+
+.modal-body ul {
+  font-size: 75%;
+}
 
 </style>
