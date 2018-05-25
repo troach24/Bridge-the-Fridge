@@ -1,6 +1,5 @@
 <template>
   <main>
-    <!-- :ingredients="ingredients" -->
     <SearchBar
     :queryString="queryString"
     :getParams="getParams"
@@ -27,7 +26,6 @@ export default {
     getParams(str) {
       this.queryString = str;
     },
-    // HIDE the f'ing api keys from the network dev tools...recipe by ID request too
     getData() {
       fetch(API.API_URL + this.queryString)
         .then(res => res.json())
