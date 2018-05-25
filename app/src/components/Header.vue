@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="#" alt="logo placeholder">
+    <img src="/static/bridge-the-fridge-logo.png" alt="logo placeholder">
   </header>
 </template>
 
@@ -8,11 +8,11 @@
 header {
   display: flex;
   padding-top: 10px;
-  border-bottom: 1px solid black;
+  justify-content: center;
 }
 
 header img {
-  height: 50px;
+  height: 100px;
   width: auto;
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <main>
-    <SearchBar :queryString="queryString" :getParams="getParams" :getData="getData" />
-    <Recipes :recipes="recipes.matches" />
+    <SearchBar
+    :queryString="queryString"
+    :getParams="getParams"
+    :getData="getData" />
+    <Recipes :recipes="recipes.matches"/>
   </main>
 </template>
 
@@ -36,6 +39,10 @@ export default {
 
 <style scoped>
   main {
+    position: relative;
+    z-index: 2;
     margin-top: 50px;
+    background-color: white;
   }
+
 </style>
