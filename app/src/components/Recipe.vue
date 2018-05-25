@@ -23,7 +23,7 @@
           </b-btn>
         </b-card-body>
       </b-card>
-      <b-modal size="lg" id="modal-center1" v-model="show"
+      <b-modal hideFooter="true" size="lg" id="modal-center1" v-model="show"
       :title="selectedRecipe.name">
         <body class="model-body">
           <img :src="selectedRecipe.images && selectedRecipe.images[0].imageUrlsBySize[360]" alt="">
@@ -137,5 +137,9 @@ body.model-body {
 .modal-body h6 {
   margin-top: 20px;
 }
+
+/* #modal-center1___BV_modal_footer_ {
+  display: none;
+} */
 
 </style>

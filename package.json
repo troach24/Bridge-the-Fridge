@@ -1,0 +1,22 @@
+{
+  "name": "bridge-the-fridge",
+  "version": "1.0.0",
+  "description": "A light application to find recipes based on what you have in your fridge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troach24/Bridge-the-Fridge.git"
+  },
+  "author": "Travis Roach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/troach24/Bridge-the-Fridge/issues"
+  },
+  "homepage": "https://github.com/troach24/Bridge-the-Fridge#readme",
+  "devDependencies": {
+    "cypress": "^2.1.0"
+  }
+}
