@@ -119,15 +119,12 @@ div.cook-time p {
   margin: 0;
 }
 
-modal-center1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 body.modal-body {
   height: 700px;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-body img {
