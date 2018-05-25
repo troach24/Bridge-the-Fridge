@@ -1,7 +1,7 @@
 <template>
   <main>
+    <!-- :ingredients="ingredients" -->
     <SearchBar
-    :ingredients="ingredients"
     :queryString="queryString"
     :getParams="getParams"
     :getData="getData" />
@@ -13,7 +13,6 @@
 import SearchBar from '@/components/SearchBar';
 import Recipes from '@/components/Recipes';
 import API from '@/lib/API';
-import ingredients from '@/assets/ingredients.json';
 
 export default {
   components: {
@@ -23,18 +22,12 @@ export default {
   data: () => ({
     recipes: Object,
     queryString: '',
-    ingredients: Array,
   }),
-  mounted() {
-    // Not being used, yet.
-    const result = JSON.parse(JSON.stringify(ingredients));
-    this.ingredients = result.map(item => item.description);
-  },
   methods: {
     getParams(str) {
       this.queryString = str;
     },
-    // HIDE the f'ing api key from the network dev tools...
+    // HIDE the f'ing api keys from the network dev tools...recipe by ID request too
     getData() {
       fetch(API.API_URL + this.queryString)
         .then(res => res.json())

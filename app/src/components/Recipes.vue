@@ -1,7 +1,5 @@
 <template>
   <section>
-    <!-- Stretch - add a filter to exclude ingredients after results
-    are displayed -->
     <ul id="recipes">
       <Recipe
       :recipes="recipes"

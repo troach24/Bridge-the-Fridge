@@ -1,19 +1,19 @@
 <template>
   <div id="recipe-container">
-    <li
-    :recipe="recipe"
-    class="li-component">
+    <li :recipe="recipe" class="li-component">
       <b-card>
         <b-card-body>
           <div class="card-title">
             <img :src="recipe.imageUrlsBySize[90]" alt="Recipe Thumbnail">
             <h4>{{recipe.recipeName}}</h4>
           </div>
-          <p class="card-text">
-            <img class="cook-time-icon" src="https://www.glutafin.co.uk/img/icons/time-icon.png" alt="Cook Time Icon">
-            <!-- need to fix time function + switch to hours if over 60 min -->
-            &nbsp Cook time: {{recipe.totalTimeInSeconds / 60}}  Minutes
-          </p>
+          <div class="card-text">
+            <img
+            class="cook-time-icon"
+            src="https://www.glutafin.co.uk/img/icons/time-icon.png"
+            alt="Cook Time Icon">
+            <p> &nbsp; Cook time: {{recipe.totalTimeInSeconds / 60}}  Minutes</p>
+          </div>
           <b-btn
           :ref="recipe.id"
           v-b-modal.modal-center
@@ -27,6 +27,7 @@
       :title="selectedRecipe.name">
         <body class="model-body">
           <img :src="selectedRecipe.images && selectedRecipe.images[0].imageUrlsBySize[360]" alt="">
+          <h6>What You'll Need:</h6>
           <ul>
             <li
             :key="ingredient"
@@ -39,7 +40,6 @@
       </b-modal>
     </li>
   </div>
-   <!-- List what you don't have on each component ? -->
 </template>
 
 <script>
@@ -54,9 +54,6 @@ export default {
     selectedRecipe: Object,
   }),
   methods: {
-    cookTime() {
-      return this.totalCookTime / 60;
-    },
     getRecipe() {
       this.recipeId = this.recipe.id;
       fetch(API.RECIPE_URL + this.recipeId + API.KEYS)
@@ -65,9 +62,6 @@ export default {
           this.selectedRecipe = selectedRecipe;
         });
     },
-    // shortenString() {
-    //   this.name.substr(0,20) + "..."
-    // },
   },
 };
 </script>
@@ -110,18 +104,20 @@ img {
   width: 50px;
 }
 
-.cook-time {
+.card-text {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-div.cook-time p {
+.card-text p {
   margin: 0;
 }
 
-body.modal-body {
-  height: 700px;
-  width: 50%;
+/* MODAL STYLES */
+
+body.model-body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,6 +130,12 @@ body.modal-body {
 
 .modal-body ul {
   font-size: 75%;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.modal-body h6 {
+  margin-top: 20px;
 }
 
 </style>
