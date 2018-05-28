@@ -1,21 +1,9 @@
-# bridge-the-fridge
+# 🌶🌽 Bridge The Fridge 🥦🥕
 
 > A light application to find recipes based on what you have in your fridge.
 
 ## Build Setup
 
-``` bash
-# install dependencies
-npm install
+Have you ever opened your fridge and wondered what the heck you are going to make for dinner? Often times we let ingredients go bad because we either buy too much at one time, or don't make the best use of what we have to create a dish.
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Here is your solution! This application is designed to bridge what you have in your fridge to your stomach, instead of the trash.
