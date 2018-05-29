@@ -41,13 +41,25 @@ export default {
 
 section {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 #search-bar {
   display: flex;
   flex-direction: column;
+}
+
+.form-control {
+  min-width: 100%;
+  font-size: 1.4rem;
+}
+
+#search-bar > button {
+  margin-top: 10px;
+  font-size: 1.275rem;
+  line-height: 1;
 }
 
 </style>

@@ -27,7 +27,7 @@
       :title="selectedRecipe.name">
         <body class="model-body">
           <img :src="selectedRecipe.images && selectedRecipe.images[0].imageUrlsBySize[360]" alt="">
-          <h6>What You'll Need:</h6>
+          <h5>What You'll Need:</h5>
           <ul>
             <li
             :key="ingredient"
@@ -129,17 +129,15 @@ body.model-body {
 }
 
 .modal-body ul {
-  font-size: 75%;
+  font-size: 1.2rem;
   margin-top: 10px;
-  padding-left: 0;
+  padding-left: 50px;
+  font-family: inherit;
 }
 
-.modal-body h6 {
+.modal-body h5 {
   margin-top: 20px;
+  font-size: 2rem;
 }
-
-/* #modal-center1___BV_modal_footer_ {
-  display: none;
-} */
 
 </style>
