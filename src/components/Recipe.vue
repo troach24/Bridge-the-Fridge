@@ -2,7 +2,8 @@
   <div id="recipe-container">
     <li :recipe="recipe" class="li-component">
       <b-card>
-        <b-card-body>
+        <b-card-body
+          @click="show=true, getRecipe(recipeId)">
           <div class="card-title">
             <img class="thumbnail-img" :src="recipe.imageUrlsBySize[90]" alt="Recipe Thumbnail">
             <h4>{{recipe.recipeName}}</h4>
@@ -17,7 +18,6 @@
           <b-btn
           :ref="recipe.id"
           v-b-modal.modal-center
-          @click="show=true, getRecipe(recipeId)"
           variant="primary">
             See More
           </b-btn>
@@ -80,6 +80,10 @@ export default {
   display: flex;
   flex-flow: wrap;
   flex-direction: column;
+}
+
+#recipe-container > li > div.card:hover {
+  transform: scale(1.07);
 }
 
 .card-title {
