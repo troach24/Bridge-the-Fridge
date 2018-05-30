@@ -4,7 +4,7 @@
       <b-card>
         <b-card-body>
           <div class="card-title">
-            <img :src="recipe.imageUrlsBySize[90]" alt="Recipe Thumbnail">
+            <img class="thumbnail-img" :src="recipe.imageUrlsBySize[90]" alt="Recipe Thumbnail">
             <h4>{{recipe.recipeName}}</h4>
           </div>
           <div class="card-text">
@@ -99,7 +99,12 @@ div .card-body {
   padding-top: 5px;
 }
 
-img {
+.thumbnail-img {
+  height: auto;
+  width: 90px;
+}
+
+.cook-time-icon {
   height: 50px;
   width: 50px;
 }
@@ -108,6 +113,7 @@ img {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
