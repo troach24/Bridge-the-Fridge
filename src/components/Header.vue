@@ -12,7 +12,7 @@ header {
 }
 
 header img {
-  height: 150px;
+  height: 125px;
   width: auto;
 }
 </style>
