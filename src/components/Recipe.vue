@@ -84,6 +84,7 @@ export default {
 
 #recipe-container > li > div.card:hover {
   transform: scale(1.07);
+  cursor: pointer;
 }
 
 .card-title {

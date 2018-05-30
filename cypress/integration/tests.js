@@ -13,7 +13,7 @@ describe('Bridge The Fridge', function () {
       .eq(0).children('img','h4').should('exist')
     cy.get("#recipe-container > li > div.card > div > div").eq(0).children()
       .eq(1).children('img','p').should('exist')
-    cy.get('#recipe-container > li > div.card > div > div > button').eq(0).click()
+    cy.get('#recipe-container > li > div.card').eq(0).click()
     cy.get('#modal-center1___BV_modal_header_').children('h5').should('exist')
     cy.get('body').children('img', 'h6').should('exist')
     cy.get('body > ul').should("have.length.above", 2)
