@@ -20,9 +20,11 @@ export default {
 </script>
 
 <style>
+
 html {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 #app {
@@ -31,12 +33,6 @@ html {
   display: flex;
   flex-direction: column;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
-
-small {
-  color: black;
-  font-size: .5rem;
-  margin-left: 10px;
 }
 
 </style>

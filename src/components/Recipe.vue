@@ -23,7 +23,10 @@
           </b-btn>
         </b-card-body>
       </b-card>
-      <b-modal hide-footer="true" size="lg" id="modal-center1" v-model="show"
+      <b-modal
+      size="lg"
+      id="modal-center1"
+      v-model="show"
       :title="selectedRecipe.name">
         <body class="model-body">
           <img :src="selectedRecipe.images && selectedRecipe.images[0].imageUrlsBySize[360]" alt="">
@@ -37,6 +40,15 @@
             </li>
           </ul>
         </body>
+        <footer slot="modal-footer">
+          <b-btn
+          class="recipe-button"
+          target="_blank"
+          :href="selectedRecipe.source && selectedRecipe.source.sourceRecipeUrl"
+          variant="success">
+            Go to Full Recipe
+          </b-btn>
+        </footer>
       </b-modal>
     </li>
   </div>
@@ -56,7 +68,12 @@ export default {
   methods: {
     getRecipe() {
       this.recipeId = this.recipe.id;
-      fetch(API.RECIPE_URL + this.recipeId + API.KEYS)
+      fetch((API.RECIPE_URL + this.recipeId), {
+        headers: {
+          'X-Yummly-App-ID': '2c80b334',
+          'X-Yummly-App-Key': 'bf5c0c89d4fc90c63f3dc60f69314e05',
+        },
+      })
         .then(res => res.json())
         .then((selectedRecipe) => {
           this.selectedRecipe = selectedRecipe;

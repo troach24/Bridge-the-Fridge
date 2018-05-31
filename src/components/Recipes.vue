@@ -25,11 +25,6 @@ export default {
 
 <style scoped>
 
-section {
-  margin: 5px;
-  padding-bottom: 20px;
-}
-
 ul {
   display: flex;
   flex-flow: row wrap;

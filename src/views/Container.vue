@@ -27,7 +27,12 @@ export default {
       this.queryString = str;
     },
     getData() {
-      fetch(API.API_URL + this.queryString)
+      fetch((API.API_URL + this.queryString), {
+        headers: {
+          'X-Yummly-App-ID': '2c80b334',
+          'X-Yummly-App-Key': 'bf5c0c89d4fc90c63f3dc60f69314e05',
+        },
+      })
         .then(res => res.json())
         .then((recipes) => {
           this.recipes = recipes;
@@ -38,8 +43,9 @@ export default {
 </script>
 
 <style scoped>
+
   main {
-    position: relative;
+    min-height: 75vh;
     z-index: 2;
     margin-top: 50px;
     background-color: white;

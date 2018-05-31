@@ -5,6 +5,7 @@
 </template>
 
 <style scoped>
+
 header {
   display: flex;
   padding-top: 10px;
