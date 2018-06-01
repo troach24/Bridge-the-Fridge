@@ -53,7 +53,7 @@ section {
 
 .form-control {
   min-width: 100%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 #search-bar > button {
