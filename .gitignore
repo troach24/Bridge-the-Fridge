@@ -2,3 +2,10 @@ node_modules/
 lib/
 app-env
 readme-drafts.md
+.DS_Store
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.firebaserc
+.postcssrc.js
