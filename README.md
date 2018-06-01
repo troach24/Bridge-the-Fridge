@@ -26,6 +26,7 @@ https://bridge-the-fridge.firebaseapp.com/
 * Native application functionality (smart phone)
 * Refine search results using filters
 * Alert if entry is not a valid ingredient
+* Type ahead search results
 
 Please do not hesitate to email me at travis.roach24@gmail.com if you have any recommendations! 
 
