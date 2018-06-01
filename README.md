@@ -6,7 +6,7 @@ _Here is your solution!_
 
 Bridge the Fridge is a lightweight application that allows you to easily find quality recipes based on the ingredients you'd like to cook with. This is such a fun way to get cooking quickly 👩‍🍳 😋
 
-Check it out [here:](https://bridge-the-fridge.firebaseapp.com/)
+Check it out [here!](https://bridge-the-fridge.firebaseapp.com/)
 
 ### Use cases, to name a few:
  Having a hard time finding a truly healthy meal?
