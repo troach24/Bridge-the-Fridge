@@ -8,7 +8,7 @@
           v-model="searchParams"
           type="text"
           class="form-control"
-          placeholder="What's in your fridge?"
+          placeholder="What would you like to cook with today?"
           aria-label="What's in your fridge?"
           aria-describedby="basic-addon2">
         <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>

@@ -7,5 +7,3 @@ readme-drafts.md
 .editorconfig
 .eslintignore
 .eslintrc.js
-.firebaserc
-.postcssrc.js
