@@ -8,6 +8,7 @@ Bridge the Fridge is a lightweight application that allows you to easily find qu
 
 Check it out [here](https://bridge-the-fridge.firebaseapp.com/)!
 
+![](https://user-images.githubusercontent.com/33434059/41113851-fb1e6cc2-6a3f-11e8-8d8a-4f92d0c338ac.gif)
 ![](https://user-images.githubusercontent.com/33434059/40942799-7fc389b6-680c-11e8-91f0-961451bc9b2c.gif)
 
 ### Use cases, to name a few:
