@@ -70,8 +70,8 @@ export default {
       this.recipeId = this.recipe.id;
       fetch((API.RECIPE_URL + this.recipeId), {
         headers: {
-          'X-Yummly-App-ID': '2c80b334',
-          'X-Yummly-App-Key': 'bf5c0c89d4fc90c63f3dc60f69314e05',
+          'X-Yummly-App-ID': API.ID,
+          'X-Yummly-App-Key': API.KEY,
         },
       })
         .then(res => res.json())
