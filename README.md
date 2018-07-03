@@ -21,6 +21,19 @@ Check it out [here](https://bridge-the-fridge.firebaseapp.com/)!
 
  Afraid you need to use up what is in your fridge before it goes to waste? Boom! Search for those specific ingredients and bridge what you have in your fridge to your stomach!
 
+
+## Client Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+```
+
+
 https://bridge-the-fridge.firebaseapp.com/
 
 ### Future Plans
@@ -30,7 +43,7 @@ https://bridge-the-fridge.firebaseapp.com/
 * Alert if entry is not a valid ingredient
 * Type ahead search results
 
-Please do not hesitate to email me at travis.roach24@gmail.com if you have any recommendations! 
+Please do not hesitate to email me at travis.roach24@gmail.com if you have any recommendations!
 
 Thank you for checking out my app,
 
