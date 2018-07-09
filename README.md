@@ -48,3 +48,6 @@ Please do not hesitate to email me at travis.roach24@gmail.com if you have any r
 Thank you for checking out my app,
 
 Travis
+
+### License
+[MIT](https://github.com/troach24/Bridge-the-Fridge/blob/master/LICENSE)
